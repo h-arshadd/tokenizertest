@@ -9,7 +9,7 @@ class InputFromUser(BaseModel):
 
     @computed_field
     @property
-    def token_generator(self):
+    def token_generator(self) -> list[int]:
         tokenizer = tiktoken.encoding_for_model("gpt-4")
         token_id = tokenizer.encode(self.user_input)
         return token_id
